@@ -7,7 +7,7 @@
 
 :Date:
 	2014/12/08 (creation)
-	2014/12/27 (last update)
+	2015/01/05 (last update)
 """
 
 import sys
@@ -66,6 +66,12 @@ def load_patterns(f):
 		result[words] = sup
 
 	return result
+
+
+
+def normalize(patts):
+    #TODO
+    return None
 
 
 
@@ -143,23 +149,26 @@ def cosine(v1, v2):
 
 def main():
 	if not len(sys.argv) > 2:
-		print "[ERROR] "+sys.argv[0]+" expected at least 2 arguments !"
+		print "[ERROR] " + sys.argv[0]+" expected at least 2 arguments !"
 		usage()
 		sys.exit(2)
 
 	patterns_dir = sys.argv[1]
 	if not os.path.isdir(patterns_dir):
-		print "[ERROR] "+sys.argv[0]+": " + patterns_dir + " is not a directory !"
+		print "[ERROR] " + sys.argv[0]+": " + patterns_dir + " is not a directory !"
 		usage()
 		sys.exit(2)
 
-	song_dir = sys.argv[2]
+	song_dir = sys.argv[2] Tout afficher
 	if not os.path.isdir(song_dir):
-		print "[ERROR] "+sys.argv[0]+": " + song_dir + " is not a directory !"
+		print "[ERROR] " + sys.argv[0]+": " + song_dir + " is not a directory !"
 		usage()
 		sys.exit(2)
+
 
 	patterns = {}
+
+	# load all patterns
 	for f in glob.glob(patterns_dir + "/*"):
 		patterns[get_name(f)] = load_patterns(f)
 
