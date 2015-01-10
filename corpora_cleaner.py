@@ -62,7 +62,7 @@ def loaddata(file_path):
     """
     data = []
     if not os.path.isfile(file_path):
-        print "[ERROR] " + file_path +": " + sys.argv[1] + " data file not found !"
+        print "[ERROR] " + file_path +": data file not found !"
         usage()
         sys.exit(2)
     print "Loading data file [" + file_path + "] ...",#
