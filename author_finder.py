@@ -159,7 +159,7 @@ def main():
 		usage()
 		sys.exit(2)
 
-	song_dir = sys.argv[2] Tout afficher
+	song_dir = sys.argv[2]
 	if not os.path.isdir(song_dir):
 		print "[ERROR] " + sys.argv[0]+": " + song_dir + " is not a directory !"
 		usage()
